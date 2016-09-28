@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Purpose: to grab iCloud Drive status.
+# Purpose: to grab iCloud Drive Desktop and Document Sync status.
 # If Drive has been setup previously then values should be: "false" or "true"
 # If Drive has NOT been setup previously then values will be: "iCloud Account Enabled, Drive Not Enabled" or "iCloud Account Disabled"
 
