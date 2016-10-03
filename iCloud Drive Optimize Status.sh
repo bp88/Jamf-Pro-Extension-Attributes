@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Purpose: to grab iCloud Optimize status.
-# Values will be: Enabled, Disabled, Never Configured
+# Values will be: Enabled, Disabled, Not Configured
 
 #Variable to determine major OS version
 OSver="$(/usr/bin/sw_vers -productVersion | /usr/bin/cut -d . -f 2)"
@@ -23,8 +23,11 @@ if [ "$OSver" -ge "12" ]; then
 		if [ "$iCloudOptimizeStatus" = "false" ]; then
 			Status="Disabled"
 		fi
+		if [ "$iCloudOptimizeStatus" != "true" ] && [ "$iCloudOptimizeStatus" != "false" ]; then
+			Status="Not Configured"
+		fi
 	else
-		Status="Never Configured"
+		Status="Not Configured"
 	fi
 fi
 
