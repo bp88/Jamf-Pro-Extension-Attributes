@@ -24,6 +24,8 @@ if [[ -e "/Users/$loggedInUser/Library/Preferences/MobileMeAccounts.plist" ]]; t
 	if [[ "$iCloudStatus" = "false" ]] || [[ -z "$iCloudStatus" ]]; then
 		BackToMyMacStatus="iCloud Account Disabled"
 	fi
+else
+	BackToMyMacStatus="iCloud Account Disabled"
 fi
 
 /bin/echo "<result>$BackToMyMacStatus</result>"
