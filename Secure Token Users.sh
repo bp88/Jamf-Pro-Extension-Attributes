@@ -30,25 +30,6 @@ for uuid in ${$(/usr/sbin/diskutil apfs listUsers / | /usr/bin/awk '/\+\-\-/ {pr
     else
         secureTokenUsers+=($username)
     fi
-    
-#     Below are other ways (not in use) to get the same results:
-#     if [[ "$adminusers" == *"$username"* ]]; then
-#         secureTokenAdmins+=($username)
-#     else
-#         secureTokenUsers+=($username)
-#     fi
-    
-#     if [[ -n "$username" && "$adminusers" =~ "$username" ]]; then
-#         secureTokenAdmins+=($username)
-#     else
-#         secureTokenUsers+=($username)
-#     fi
-    
-#     if [[ "$(/usr/bin/dsmemberutil checkmembership -U "$username" -G "admin")" == *"is a member of the group"* ]]; then
-#         secureTokenAdmins+=($username)
-#     else
-#         secureTokenUsers+=($username)
-#     fi
 done
 
 if [[ -z ${secureTokenAdmins[@]} ]]; then
