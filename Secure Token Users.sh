@@ -18,9 +18,6 @@ if [[ "$fsType" != *APFS* ]]; then
     exit 0
 fi
 
-# Variable to gather list of admins
-# adminusers=$(/usr/bin/dscl . -read /Groups/admin | /usr/bin/awk '/GroupMembership:/{for(i=3;i<=NF;++i)print $i}')
-
 secureTokenAdmins=()
 secureTokenUsers=()
 
